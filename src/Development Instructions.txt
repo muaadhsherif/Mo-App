@@ -1,0 +1,20 @@
+
+/Login (default Page)
+Login Form
+
+Sign Up
+
+
+/Home:
+2 tabs
+Movies - Tv Shows
+Each one shows a different content
+
+On click on any movie, we get its details in /movies/id
+On click on any TV Show, we get its details in /TV_Shows/id
+
+/* 
+to get an Image:
+http://image.tmdb.org/t/p/w500/path_name
+
+*/
