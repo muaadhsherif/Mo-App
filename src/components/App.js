@@ -13,7 +13,8 @@ function App(props) {
 		<BrowserRouter>
 			<Route
 				render={() => {
-					if (!props.userId) {
+					if (props.userId) {
+						//later will set it back to with !
 						return (
 							<>
 								<Route exact path='/login' component={LogIn} />
@@ -30,7 +31,7 @@ function App(props) {
 							<Switch>
 								<Route exact path='/login' component={LogIn} />
 								<Route exact path='/sign_up' component={SignUp} />
-								<Route exact path='/home' component={Home} />
+								<Route exact path='/' component={Home} />
 								<Route
 									exact
 									path='/movies/:id'
@@ -52,7 +53,7 @@ function App(props) {
 }
 
 const mapStateToProps = (state) => ({
-	userId: state.currentUserId,
+	userId: state.currentUserId
 })
 
 export default connect(mapStateToProps)(App)

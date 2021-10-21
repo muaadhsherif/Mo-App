@@ -5,4 +5,20 @@ body {
 		'Helvetica Neue', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	font-weight: bold;
+}
+button {
+	font-weight: bold;
+}
+
+form {
+	margin-top: 45px;
+}
+
+form *,
+.orSignUp {
+	padding: 5px 10px;
+	margin: 10px auto;
+	display: block;
 }
