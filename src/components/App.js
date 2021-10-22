@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
+import Nav from './Nav'
 import LogIn from './LogIn'
 import SignUp from './SignUp'
 import Home from './Home'
@@ -25,22 +26,25 @@ function App(props) {
 						)
 					} else {
 						return (
-							<Switch>
-								<Route exact path='/login' component={LogIn} />
-								<Route exact path='/sign_up' component={SignUp} />
-								<Route exact path='/' component={Home} />
-								<Route
-									exact
-									path='/movies/:id'
-									component={MovieDetails}
-								/>
-								<Route
-									exact
-									path='/TV_Shows:id'
-									component={TVShowDetails}
-								/>
-								<Route component={NotFound} />
-							</Switch>
+							<>
+								<Route component={Nav} />
+								<Switch>
+									<Route exact path='/login' component={LogIn} />
+									<Route exact path='/sign_up' component={SignUp} />
+									<Route exact path='/' component={Home} />
+									<Route
+										exact
+										path='/movies/:id'
+										component={MovieDetails}
+									/>
+									<Route
+										exact
+										path='/TV_Shows:id'
+										component={TVShowDetails}
+									/>
+									<Route component={NotFound} />
+								</Switch>
+							</>
 						)
 					}
 				}}

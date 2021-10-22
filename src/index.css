@@ -22,3 +22,28 @@ form *,
 	margin: 10px auto;
 	display: block;
 }
+
+nav {
+	background-color: #333;
+	color: white;
+	padding: 15px;
+}
+
+nav a {
+	margin: 7vw;
+	color: white;
+	text-decoration: none;
+}
+
+nav .user {
+	float: right;
+	color: #ff6767;
+}
+
+nav .user a {
+	margin: 3vw;
+}
+
+nav .user span {
+	text-decoration: underline;
+}
