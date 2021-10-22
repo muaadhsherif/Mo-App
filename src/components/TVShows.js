@@ -1,5 +1,13 @@
 function TVShows() {
-	return <div>TVShows</div>
+	return (
+		<aside>
+			<ul>
+				<li>Popular</li>
+				<li>Top Rated</li>
+				<li>Get Latest</li>
+			</ul>
+		</aside>
+	)
 }
 
 export default TVShows

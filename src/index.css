@@ -10,6 +10,9 @@ body {
 }
 button {
 	font-weight: bold;
+	padding: 7px;
+	margin: 20px;
+	cursor: pointer;
 }
 
 form {
@@ -46,4 +49,38 @@ nav .user a {
 
 nav .user span {
 	text-decoration: underline;
+}
+
+.toggle_show button {
+	width: 130px;
+	opacity: 0.5;
+	font-size: 21px;
+}
+
+body .active {
+	border: solid #ff6767;
+	opacity: 1;
+}
+
+aside {
+	float: left;
+	background-color: #eee;
+	border: double #ddd;
+	margin-left: 30px;
+}
+
+aside ul {
+	padding: 0;
+	margin: 0;
+}
+
+aside li {
+	display: block;
+	padding: 17px;
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+aside li:not(:last-child) {
+	border-bottom: solid #ddd;
 }
