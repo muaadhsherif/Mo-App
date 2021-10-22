@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 function SignUp() {
-	function getFormData(e) {
+	function addUser(e) {
 		e.preventDefault()
 
 		/* let data = e.target
@@ -27,7 +27,7 @@ function SignUp() {
 			const allUsers = JSON.parse(localStorage.users)
 
 			for (let i = 0; i < allUsers.length; i++) {
-				if (allUsers[i].username === newUser.username) {
+				if (allUsers[i].username === username) {
 					return alert('this username is already used.')
 				}
 			}
@@ -40,7 +40,7 @@ function SignUp() {
 
 	return (
 		<>
-			<form onSubmit={getFormData}>
+			<form onSubmit={addUser}>
 				<input type='text' name='username' placeholder='username' />
 				<input type='password' name='password' placeholder='password' />
 				<button type='submit'>Sign Up</button>

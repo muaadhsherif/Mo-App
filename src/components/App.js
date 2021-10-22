@@ -13,17 +13,14 @@ function App(props) {
 		<BrowserRouter>
 			<Route
 				render={() => {
-					if (props.userId) {
-						//later will set it back to with !
+					console.log(props)
+					if (!props.userName) {
 						return (
 							<>
-								<Route exact path='/login' component={LogIn} />
-								<Route exact path='/sign_up' component={SignUp} />
-								{props.signUp ? (
-									<Redirect to='/login' />
-								) : (
-									<Redirect to='/sign_up' />
-								)}
+								<Switch>
+									<Route exact path='/sign_up' component={SignUp} />
+									<Route component={LogIn} />
+								</Switch>
 							</>
 						)
 					} else {
@@ -53,7 +50,7 @@ function App(props) {
 }
 
 const mapStateToProps = (state) => ({
-	userId: state.currentUserId
+	userName: state.userName
 })
 
 export default connect(mapStateToProps)(App)
