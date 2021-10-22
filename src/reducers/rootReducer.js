@@ -6,6 +6,12 @@ const rootReducer = (state, action) => {
 		case 'SELECT_SHOW_TYPE':
 			return { ...state, show: action.show }
 
+		case 'SELECT_TVSHOWS_SECTION':
+			return { ...state, TVShowsSection: action.section }
+
+		case 'SELECT_MOVIES_SECTION':
+			return { ...state, moviesSection: action.section }
+
 		default:
 			return { ...state }
 	}

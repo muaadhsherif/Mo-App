@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import Movies from './Movies'
-import TVShows from './TVShows'
+import Movies from './Movies/Movies'
+import TVShows from './TVSHOWS/TVShows'
 
 function Home(props) {
 	const showUI = props.show === 'TVShows' ? <TVShows /> : <Movies />

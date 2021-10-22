@@ -58,7 +58,7 @@ nav .user span {
 }
 
 body .active {
-	border: solid #ff6767;
+	background-color: #ff6767;
 	opacity: 1;
 }
 

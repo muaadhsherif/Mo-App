@@ -5,8 +5,8 @@ import Nav from './Nav'
 import LogIn from './LogIn'
 import SignUp from './SignUp'
 import Home from './Home'
-import MovieDetails from './MovieDetails'
-import TVShowDetails from './TVShowDetails'
+import MovieDetails from './Movies/MovieDetails'
+import TVShowDetails from './TVSHOWS/TVShowDetails'
 import NotFound from './NotFound'
 
 function App(props) {
