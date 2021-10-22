@@ -3,6 +3,9 @@ const rootReducer = (state, action) => {
 		case 'COUNT':
 			return { ...state, count: action.i }
 
+		case 'LOGIN':
+			return { ...state, userName: action.userName }
+
 		default:
 			return { ...state }
 	}
