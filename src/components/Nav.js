@@ -7,8 +7,10 @@ function Nav(props) {
 			<Link to='/'>Tv Shows</Link>
 			<Link to='/'>Movies</Link>
 			<div className='user'>
-				Hello, <u>{props.userName}</u>
-				<Link to='/login'>Log out</Link>
+				Hello, <i>{props.userName}</i>
+				<Link to='/login' onClick={() => props.logIn(null)}>
+					Log out
+				</Link>
 			</div>
 		</nav>
 	)
@@ -18,4 +20,12 @@ const mapStateToProps = (state) => ({
 	userName: state.userName
 })
 
-export default connect(mapStateToProps)(Nav)
+const mapDispatchToProps = (dispatch) => ({
+	logIn: (userName) =>
+		dispatch({
+			type: 'LOGIN',
+			userName
+		})
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav)
