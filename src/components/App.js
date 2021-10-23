@@ -14,7 +14,6 @@ function App(props) {
 		<BrowserRouter>
 			<Route
 				render={() => {
-					console.log(props)
 					if (!props.userName) {
 						return (
 							<>

@@ -1,5 +1,6 @@
 import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
+
 function LogIn(props) {
 	function checkUser(e) {
 		e.preventDefault()

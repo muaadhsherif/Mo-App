@@ -62,11 +62,9 @@ function Movies(props) {
 	)
 }
 
-const mapStateToProps = (state) => {
-	return {
-		section: state.moviesSection
-	}
-}
+const mapStateToProps = (state) => ({
+	section: state.moviesSection
+})
 
 const mapDispatchToProps = (dispatch) => ({
 	selectMoviesSection: (section) =>
