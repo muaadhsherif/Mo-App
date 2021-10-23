@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-//import fetchMovies from '../fetchMovies'
+import fetchMovies from '../../fetchMovies'
 
 function Popular(props) {
 	console.log(props.movies)
@@ -18,7 +18,7 @@ function Popular(props) {
 				<tbody>
 					{movies.map((mov, n) => (
 						<tr key={mov.id}>
-							<td>{n}</td>
+							<td>{n + 1}</td>
 							<td>{mov.title}</td>
 							<td>{mov.release_date}</td>
 							<td>{mov.popularity}</td>
@@ -28,15 +28,7 @@ function Popular(props) {
 			</table>
 		)
 	} else {
-		//fetchMovies(props, 'movie/popular')
-		fetch(
-			`http://api.themoviedb.org/3/movie/popular?api_key=8ea69ef6d8e54cbfeab77e1fdd807436`
-		)
-			.then((data) => data.json())
-			.then((json) => {
-				let movies = json.results
-				props.moviesToProps(movies)
-			})
+		fetchMovies(props, 'movie/popular')
 		return <div>Loading</div>
 	}
 }

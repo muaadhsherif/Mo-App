@@ -7,6 +7,15 @@ const fetchMovies = (props, subURL) => {
 			let movies = json.results
 			props.moviesToProps(movies)
 		})
+
+	/* fetch(
+		`http://api.themoviedb.org/3/?api_key=`
+	)
+		.then((data) => data.json())
+		.then((json) => {
+			let movies = json.results
+			props.moviesToProps(movies)
+		}) */
 }
 
 export default fetchMovies
