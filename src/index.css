@@ -1,5 +1,5 @@
 body {
-	margin: 0;
+	margin: 0 0 0;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
 		'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
 		'Helvetica Neue', sans-serif;
@@ -63,7 +63,9 @@ body .active {
 }
 
 aside {
-	float: left;
+	position: fixed;
+	top: 30%;
+	left: 15px;
 	background-color: #eee;
 	border: double #ddd;
 	margin-left: 30px;
@@ -83,4 +85,23 @@ aside li {
 
 aside li:not(:last-child) {
 	border-bottom: solid #ddd;
+}
+
+.movies_table {
+	margin-left: 30%;
+	border-collapse: collapse;
+}
+
+.movies_table,
+.movies_table th {
+	border: solid 2px;
+}
+
+.movies_table td {
+	font-weight: normal;
+	border: solid 1px;
+}
+.movies_table td,
+.movies_table th {
+	padding: 5px;
 }
