@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom'
+import { useState } from "react";
+import { Link, useHistory, Redirect } from 'react-router-dom'
 
 function SignUp() {
+	const history = useHistory();
 	function addUser(e) {
 		e.preventDefault()
 
@@ -35,9 +37,10 @@ function SignUp() {
 			allUsers.push(newUser)
 
 			localStorage.users = JSON.stringify(allUsers)
+			history.push('/login')
 		}
 	}
-
+	
 	return (
 		<>
 			<form onSubmit={addUser}>

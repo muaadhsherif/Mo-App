@@ -28,7 +28,7 @@ function LogIn(props) {
 	}
 
 	if (props.userName) {
-		return <Redirect to='/'></Redirect>
+		return <Redirect to="/"/>
 	} else {
 		return (
 			<>
