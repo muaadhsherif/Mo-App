@@ -2,14 +2,13 @@ import { connect } from 'react-redux'
 import fetchMovies from '../../fetchMovies'
 
 function Popular(props) {
-	console.log(props.movies)
 	const movies = props.movies
 	if (movies) {
 		return (
 			<table className='movies_table'>
 				<thead>
 					<tr>
-						<th></th>
+						<th />
 						<th>Title</th>
 						<th>Release Date</th>
 						<th>Popularity</th>
