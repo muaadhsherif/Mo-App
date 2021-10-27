@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 function SignUp() {
+	const history = useHistory();
 	function addUser(e) {
 		e.preventDefault()
 
@@ -23,7 +24,8 @@ function SignUp() {
 
 		if (!localStorage.users) {
 			localStorage.users = JSON.stringify([newUser])
-		} else {
+		} 
+		else {
 			const allUsers = JSON.parse(localStorage.users)
 
 			for (let i = 0; i < allUsers.length; i++) {
@@ -35,9 +37,10 @@ function SignUp() {
 			allUsers.push(newUser)
 
 			localStorage.users = JSON.stringify(allUsers)
+			history.push('/login')
 		}
 	}
-
+	
 	return (
 		<>
 			<form onSubmit={addUser}>
