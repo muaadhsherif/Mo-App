@@ -1,12 +1,15 @@
 import { connect } from 'react-redux'
 import AllMovies from './sections/AllMovies'
+import Popular from './sections/PopularMovies'
 import TopRated from './sections/TopRated'
 import RecentMovies from './sections/RecentMovies'
 import Upcoming from './sections/Upcoming'
 
 function Movies(props) {
 	let sectionUI =
-		props.section === 'top_rated' ? (
+		props.section === 'popular_movies' ? (
+			<Popular />
+		) : props.section === 'top_rated' ? (
 			<TopRated />
 		) : props.section === 'recent_movies' ? (
 			<RecentMovies />
@@ -33,11 +36,19 @@ function Movies(props) {
 					</li>
 
 					<li
+						id='popular_movies'
+						className={props.section === 'popular_movies' ? 'active ' : ''}
+						onClick={(e) => props.selectMoviesSection(e.target.id)}
+					>
+						Popular
+					</li>
+
+					<li
 						id='recent_movies'
 						className={props.section === 'recent_movies' ? 'active ' : ''}
 						onClick={(e) => props.selectMoviesSection(e.target.id)}
 					>
-						Recent Movies
+						Recent
 					</li>
 
 					<li
