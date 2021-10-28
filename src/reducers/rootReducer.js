@@ -30,6 +30,12 @@ const rootReducer = (state, action) => {
 		case 'GET_POPULAR_SHOWS':
 			return { ...state, popularShows: action.shows }
 
+		case 'GET_TOP_RATED_SHOWS':
+			return { ...state, topRatedShows: action.shows }
+
+		case 'GET_LIVE_SHOWS':
+			return { ...state, liveShows: action.shows }
+
 		/* End Get Shows */
 
 		default:

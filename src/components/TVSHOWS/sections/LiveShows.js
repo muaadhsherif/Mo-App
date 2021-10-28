@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import fetchMovies from '../../fetchMovies'
 
-function TopRated(props) {
+function Live(props) {
 	const shows = props.shows
 	if (shows) {
 		return (
@@ -12,7 +12,7 @@ function TopRated(props) {
 						<th>Title</th>
 						<th>Release Date</th>
 						<th>Vote Average</th>
-						<th>Vote Count</th>
+						<th>Popularity</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -22,7 +22,7 @@ function TopRated(props) {
 							<td>{sh.name}</td>
 							<td>{sh.first_air_date}</td>
 							<td>{sh.vote_average}</td>
-							<td>{sh.vote_count}</td>
+							<td>{sh.popularity}</td>
 						</tr>
 					))}
 				</tbody>
@@ -30,23 +30,23 @@ function TopRated(props) {
 		)
 	}
 	else {
-		fetchMovies(props, 'tv/top_rated')
+		fetchMovies(props, 'tv/on_the_air')
 		return <div>Loading</div>
 	}
 }
 
 const mapStateToProps = (state) => {
 	return {
-		shows: state.topRatedShows
+		shows: state.liveShows
 	}
 }
 
 const mapDispatchToProps = (dispatch) => ({
 	moviesToProps: (shows) =>
 		dispatch({
-			type: 'GET_TOP_RATED_SHOWS',
+			type: 'GET_LIVE_SHOWS',
 			shows
 		})
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(TopRated)
+export default connect(mapStateToProps, mapDispatchToProps)(Live)

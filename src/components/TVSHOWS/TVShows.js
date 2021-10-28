@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import Popular from './sections/PopularShows'
 import TopRated from './sections/TopRatedShows'
-import GetLatest from './sections/GetLatestShows'
+import GetLatest from './sections/LiveShows'
 
 function TVShows(props) {
 	let sectionUI =
@@ -36,11 +36,11 @@ function TVShows(props) {
 						Top Rated
 					</li>
 					<li
-						id='get_latest'
-						className={props.section === 'get_latest' ? 'active ' : ''}
+						id='live'
+						className={props.section === 'live' ? 'active ' : ''}
 						onClick={(e) => props.selectTVShowsSection(e.target.id)}
 					>
-						Get Latest
+						Live Now
 					</li>
 				</ul>
 			</aside>
