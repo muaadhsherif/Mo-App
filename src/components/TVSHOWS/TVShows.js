@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Popular from './sections/Popular'
+import Popular from './sections/PopularShows'
 import TopRated from './sections/TopRated'
 import GetLatest from './sections/GetLatest'
 

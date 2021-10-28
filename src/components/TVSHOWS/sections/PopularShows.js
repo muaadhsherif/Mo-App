@@ -2,8 +2,8 @@ import { connect } from 'react-redux'
 import fetchMovies from '../../fetchMovies'
 
 function Popular(props) {
-	const movies = props.movies
-	if (movies) {
+	const shows = props.shows
+	if (shows) {
 		return (
 			<table className='movies_table'>
 				<thead>
@@ -15,34 +15,35 @@ function Popular(props) {
 					</tr>
 				</thead>
 				<tbody>
-					{movies.map((mov, n) => (
-						<tr key={mov.id}>
+					{shows.map((sh, n) => (
+						<tr key={sh.id}>
 							<td>{n + 1}</td>
-							<td>{mov.title}</td>
-							<td>{mov.release_date}</td>
-							<td>{mov.popularity}</td>
+							<td>{sh.name}</td>
+							<td>{sh.first_air_date}</td>
+							<td>{sh.popularity}</td>
 						</tr>
 					))}
 				</tbody>
 			</table>
 		)
-	} else {
-		fetchMovies(props, 'movie/popular')
+	}
+	else {
+		fetchMovies(props, 'tv/popular')
 		return <div>Loading</div>
 	}
 }
 
 const mapStateToProps = (state) => {
 	return {
-		movies: state.popularMovies
+		shows: state.popularShows
 	}
 }
 
 const mapDispatchToProps = (dispatch) => ({
-	moviesToProps: (movies) =>
+	moviesToProps: (shows) =>
 		dispatch({
-			type: 'GET_POPULAR_MOVIES',
-			movies
+			type: 'GET_POPULAR_SHOWS',
+			shows
 		})
 })
 
