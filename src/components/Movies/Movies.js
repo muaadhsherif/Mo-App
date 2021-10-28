@@ -1,22 +1,16 @@
 import { connect } from 'react-redux'
-import AllMovies from './sections/AllMovies'
 import Popular from './sections/PopularMovies'
 import TopRated from './sections/TopRatedMovies'
-import RecentMovies from './sections/RecentMovies'
 import Upcoming from './sections/UpcomingMovies'
 
 function Movies(props) {
 	let sectionUI =
-		props.section === 'popular_movies' ? (
-			<Popular />
-		) : props.section === 'top_rated' ? (
+		props.section === 'top_rated' ? (
 			<TopRated />
-		) : props.section === 'recent_movies' ? (
-			<RecentMovies />
-		) : props.section === 'upcoming' ? (
+		): props.section === 'upcoming' ? (
 			<Upcoming />
 		) : (
-			<AllMovies />
+			<Popular />
 		)
 
 	return (
@@ -24,31 +18,15 @@ function Movies(props) {
 			<aside>
 				<ul>
 					<li
-						id='all_movies'
+						id='popular_movies'
 						className={
-							!props.section || props.section === 'all_movies'
+							!props.section || props.section === 'popular_movies'
 								? 'active '
 								: ''
 						}
 						onClick={(e) => props.selectMoviesSection(e.target.id)}
 					>
-						All Movies
-					</li>
-
-					<li
-						id='popular_movies'
-						className={props.section === 'popular_movies' ? 'active ' : ''}
-						onClick={(e) => props.selectMoviesSection(e.target.id)}
-					>
 						Popular
-					</li>
-
-					<li
-						id='recent_movies'
-						className={props.section === 'recent_movies' ? 'active ' : ''}
-						onClick={(e) => props.selectMoviesSection(e.target.id)}
-					>
-						Recent
 					</li>
 
 					<li
