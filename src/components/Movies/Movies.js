@@ -1,9 +1,9 @@
 import { connect } from 'react-redux'
 import AllMovies from './sections/AllMovies'
 import Popular from './sections/PopularMovies'
-import TopRated from './sections/TopRated'
+import TopRated from './sections/TopRatedMovies'
 import RecentMovies from './sections/RecentMovies'
-import Upcoming from './sections/Upcoming'
+import Upcoming from './sections/UpcomingMovies'
 
 function Movies(props) {
 	let sectionUI =

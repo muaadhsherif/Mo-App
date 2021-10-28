@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import Popular from './sections/PopularShows'
-import TopRated from './sections/TopRated'
-import GetLatest from './sections/GetLatest'
+import TopRated from './sections/TopRatedShows'
+import GetLatest from './sections/GetLatestShows'
 
 function TVShows(props) {
 	let sectionUI =
