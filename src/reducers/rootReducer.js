@@ -13,15 +13,20 @@ const rootReducer = (state, action) => {
 			return { ...state, moviesSection: action.section }
 
 		/* Start Get Movies */
+
 		case 'GET_POPULAR_MOVIES':
 			return { ...state, popularMovies: action.movies }
 
 		case 'GET_TOP_RATED_MOVIES':
 			return { ...state, topRatedMovies: action.movies }
 
+		case 'GET_UPCOMING_MOVIES':
+			return { ...state, upcomingMovies: action.movies }
+
 		/* End Get Movies */
 
 		/* Start Get Shows */
+
 		case 'GET_POPULAR_SHOWS':
 			return { ...state, popularShows: action.shows }
 
