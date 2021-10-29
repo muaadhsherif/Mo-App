@@ -38,8 +38,15 @@ const rootReducer = (state, action) => {
 
 		/* End Get Shows */
 
+		case 'ADD_SHOW_DETAILS':
+			return {
+				...state,
+				showsDetails: [ ...state.showsDetails, action.details ],
+				detailedShowsIds: [ ...state.detailedShowsIds, action.id ]
+			}
+
 		default:
-			return { ...state }
+			return { ...state, showsDetails: [], detailedShowsIds: [] }
 	}
 }
 

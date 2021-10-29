@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 import fetchMovies from '../../fetchMovies'
+import Details from '../Details.js'
 
 function TopRated(props) {
 	const shows = props.shows
@@ -25,7 +25,7 @@ function TopRated(props) {
 							<td>{sh.vote_average}</td>
 							<td>{sh.vote_count}</td>
 							<td>
-								<Link to={`/TV_Shows/${sh.id}`}>More Details</Link>
+								<Details id={sh.id} />
 							</td>
 						</tr>
 					))}
