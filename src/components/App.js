@@ -38,7 +38,7 @@ function App(props) {
 									/>
 									<Route
 										exact
-										path='/TV_Shows:id'
+										path='/TV_Shows/:id'
 										component={TVShowDetails}
 									/>
 									<Route component={NotFound} />

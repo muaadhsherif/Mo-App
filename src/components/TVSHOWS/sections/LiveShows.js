@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import fetchMovies from '../../fetchMovies'
 
 function Live(props) {
@@ -23,6 +24,9 @@ function Live(props) {
 							<td>{sh.first_air_date}</td>
 							<td>{sh.vote_average}</td>
 							<td>{sh.popularity}</td>
+							<td>
+								<Link to={`/TV_Shows/:${sh.id}`}>More Details</Link>
+							</td>
 						</tr>
 					))}
 				</tbody>

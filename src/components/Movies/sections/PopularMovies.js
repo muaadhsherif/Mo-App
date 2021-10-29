@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import fetchMovies from '../../fetchMovies'
 
 function Popular(props) {
@@ -21,6 +22,9 @@ function Popular(props) {
 							<td>{mov.title}</td>
 							<td>{mov.release_date}</td>
 							<td>{mov.popularity}</td>
+							<td>
+								<Link to={`/movies/:${mov.id}`}>More Details</Link>
+							</td>
 						</tr>
 					))}
 				</tbody>
