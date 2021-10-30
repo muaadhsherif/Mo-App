@@ -1,8 +1,7 @@
 body {
 	margin: 0 0 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-		'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-		'Helvetica Neue', sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
@@ -104,4 +103,27 @@ aside li:not(:last-child) {
 .movies_table td,
 .movies_table th {
 	padding: 5px;
+}
+
+.details {
+	text-align: left;
+	padding: 20px;
+}
+
+.details div {
+	margin-top: 10px;
+}
+
+.details h3 {
+	display: inline-block;
+	color: #d24141;
+	margin: 0 10px 0 0;
+}
+
+.details span {
+	font-size: 17px;
+}
+
+.details .overview p {
+	margin: 5px 30px;
 }

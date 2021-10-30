@@ -7,17 +7,24 @@ function TVShowDetails(props) {
 		let arr = []
 
 		for (const key in details) {
-			arr.push(
-				<div>
-					<h2>{key}</h2>
-					<p>{details[key]}</p>
-				</div>
-			)
+			if (key !== 'Overview')
+				arr.push(
+					<div>
+						<h3>{key} :</h3>
+						<span>{details[key]}</span>
+					</div>
+				)
 		}
+		arr.push(
+			<div className='overview'>
+				<h3>Overview:</h3>
+				<p>{details.Overview}</p>
+			</div>
+		)
 		return arr
 	}
 
-	return <div>{UI()}</div>
+	return <div className='details'>{UI()}</div>
 }
 
 const mapStateToProps = (state) => {
