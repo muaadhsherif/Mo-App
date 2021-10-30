@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-function Details(props) {
+function DetailsLink(props) {
 	const id = props.id
 	function addDetails() {
 		if (props.showsIds.includes(id)) {
@@ -30,9 +30,9 @@ function Details(props) {
 	}
 
 	return (
-		<Link to={`/TV_Shows/${props.id}`} onClick={addDetails}>
+		<a to={`/TV_Shows/${props.id}`} onClick={addDetails}>
 			More Details
-		</Link>
+		</a>
 	)
 }
 
@@ -51,4 +51,4 @@ const mapDispatchToProps = (dispatch) => ({
 		})
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Details)
+export default connect(mapStateToProps, mapDispatchToProps)(DetailsLink)

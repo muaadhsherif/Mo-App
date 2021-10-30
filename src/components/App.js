@@ -6,7 +6,7 @@ import LogIn from './LogIn'
 import SignUp from './SignUp'
 import Home from './Home'
 import MovieDetails from './Movies/MovieDetails'
-import TVShowDetails from './TVSHOWS/TVShowDetails'
+import TVShowDetailsPage from './TVSHOWS/TVShowDetailsPage'
 import NotFound from './NotFound'
 
 function App(props) {
@@ -39,7 +39,7 @@ function App(props) {
 									<Route
 										exact
 										path='/TV_Shows/:id'
-										component={TVShowDetails}
+										component={TVShowDetailsPage}
 									/>
 									<Route component={NotFound} />
 								</Switch>
