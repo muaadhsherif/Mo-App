@@ -7,7 +7,8 @@ function DetailsLink(props) {
 	function addDetails(e) {
 		e && e.preventDefault()
 
-		if (props.showsIds.includes(id)) {
+		if (props.showsIds.has(id)) {
+			history.push(`/TV_Shows/${id}`)
 		}
 		else {
 			fetch(`http://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_API_KEY}`)
@@ -15,7 +16,7 @@ function DetailsLink(props) {
 				.then((show) => {
 					props.addDetailsToProps(id, {
 						Title: show.name,
-						'Id On TMDB': show.id,
+						'Id On TMDB': id,
 						'Release Date': show.first_air_date,
 						'Last Air Date': show.last_air_date,
 						Episodes: show.number_of_episodes,
@@ -28,13 +29,17 @@ function DetailsLink(props) {
 						Overview: show.overview
 					})
 				})
+				.then((x) => {
+					history.push(`/TV_Shows/${id}`)
+				})
 		}
-		history.push(`/TV_Shows/${id}`)
 	}
 
-	return (
+	return props.clicked ? (
+		<p>Loading... {addDetails(null)}</p>
+	) : (
 		<a href='' onClick={(e) => addDetails(e)}>
-			{props.clicked && addDetails(null)} More Details
+			More Details
 		</a>
 	)
 }
