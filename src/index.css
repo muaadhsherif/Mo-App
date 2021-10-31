@@ -126,4 +126,5 @@ aside li:not(:last-child) {
 
 .details .overview p {
 	margin: 5px 30px;
+	font-weight: 600;
 }

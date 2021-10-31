@@ -1,11 +1,13 @@
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 function DetailsLink(props) {
+	const history = useHistory()
 	const id = props.id
-	function addDetails() {
+	function addDetails(e) {
+		e && e.preventDefault()
+
 		if (props.showsIds.includes(id)) {
-			return
 		}
 		else {
 			fetch(`http://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_API_KEY}`)
@@ -27,11 +29,12 @@ function DetailsLink(props) {
 					})
 				})
 		}
+		history.push(`/TV_Shows/${id}`)
 	}
 
 	return (
-		<a to={`/TV_Shows/${props.id}`} onClick={addDetails}>
-			More Details
+		<a href='' onClick={(e) => addDetails(e)}>
+			{props.clicked && addDetails(null)} More Details
 		</a>
 	)
 }
