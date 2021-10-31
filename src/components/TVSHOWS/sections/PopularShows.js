@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 import fetchMovies from '../../fetchMovies'
+import DetailsLink from '../DetailsLink'
 
 function Popular(props) {
 	const shows = props.shows
@@ -24,7 +24,7 @@ function Popular(props) {
 							<td>{sh.first_air_date}</td>
 							<td>{sh.popularity}</td>
 							<td>
-								<Link to={`/TV_Shows/${sh.id}`}>More Details</Link>
+								<DetailsLink id={sh.id} />
 							</td>
 						</tr>
 					))}
