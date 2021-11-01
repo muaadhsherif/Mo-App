@@ -43,11 +43,25 @@ const rootReducer = (state, action) => {
 				...state,
 				showsDetails: { ...state.showsDetails, [action.id]: action.details },
 				detailedShowsIds: new Set([ ...state.detailedShowsIds, action.id ]),
-				lastId: action.id
+				lastShowId: action.id
+			}
+
+		case 'ADD_MOVIE_DETAILS':
+			return {
+				...state,
+				moviesDetails: { ...state.moviesDetails, [action.id]: action.details },
+				detailedMoviesIds: new Set([ ...state.detailedMoviesIds, action.id ]),
+				lastMovieId: action.id
 			}
 
 		default:
-			return { ...state, showsDetails: {}, detailedShowsIds: new Set() }
+			return {
+				...state,
+				showsDetails: {},
+				detailedShowsIds: new Set(),
+				moviesDetails: {},
+				detailedMoviesIds: new Set()
+			}
 	}
 }
 

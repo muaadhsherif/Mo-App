@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { useLocation } from 'react-router'
 import DetailsLink from './DetailsLink'
 
-function TVShowDetails(props) {
+function MoviesDetails(props) {
 	const location = useLocation()
 
 	const UI = () => {
@@ -30,7 +30,7 @@ function TVShowDetails(props) {
 			return arr
 		}
 		else {
-			let id = location.pathname.slice(10)
+			let id = location.pathname.slice(8)
 
 			return <DetailsLink clicked={true} id={id} />
 		}
@@ -41,8 +41,8 @@ function TVShowDetails(props) {
 
 const mapStateToProps = (state) => {
 	return {
-		details: state.showsDetails[state.lastShowId]
+		details: state.moviesDetails[state.lastMovieId]
 	}
 }
 
-export default connect(mapStateToProps)(TVShowDetails)
+export default connect(mapStateToProps)(MoviesDetails)

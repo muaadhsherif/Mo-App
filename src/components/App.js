@@ -5,8 +5,8 @@ import Nav from './Nav'
 import LogIn from './LogIn'
 import SignUp from './SignUp'
 import Home from './Home'
-import MovieDetails from './Movies/MovieDetails'
-import TVShowDetailsPage from './TVSHOWS/TVShowDetailsPage'
+import MoviesDetails from './Movies/MoviesDetailsPage'
+import TVShowDetails from './TVSHOWS/TVShowDetailsPage'
 import NotFound from './NotFound'
 
 function App(props) {
@@ -34,12 +34,12 @@ function App(props) {
 									<Route
 										exact
 										path='/movies/:id'
-										component={MovieDetails}
+										component={MoviesDetails}
 									/>
 									<Route
 										exact
 										path='/TV_Shows/:id'
-										component={TVShowDetailsPage}
+										component={TVShowDetails}
 									/>
 									<Route component={NotFound} />
 								</Switch>

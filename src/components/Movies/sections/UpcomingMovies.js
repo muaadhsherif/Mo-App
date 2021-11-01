@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 import fetchMovies from '../../fetchMovies'
+import DetailsLink from '../DetailsLink'
 
 function Upcoming(props) {
 	const movies = props.movies
@@ -23,7 +23,7 @@ function Upcoming(props) {
 							<td>{mov.release_date}</td>
 							<td>{mov.original_language}</td>
 							<td>
-								<Link to={`/movies/${mov.id}`}>More Details</Link>
+								<DetailsLink id={mov.id} />
 							</td>
 						</tr>
 					))}
