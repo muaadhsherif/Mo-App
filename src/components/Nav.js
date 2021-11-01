@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom'
 function Nav(props) {
 	return (
 		<nav>
-			<Link to='/'>Tv Shows</Link>
-			<Link to='/'>Movies</Link>
+			<Link to='/' onClick={() => props.selectShowType('TVShows')}>
+				Tv Shows
+			</Link>
+			<Link to='/' onClick={() => props.selectShowType('Movies')}>
+				Movies
+			</Link>
 			<div className='user'>
 				Hello, <i>{props.userName}</i>
 				<Link to='/login' onClick={() => props.logIn(null)}>
@@ -25,6 +29,12 @@ const mapDispatchToProps = (dispatch) => ({
 		dispatch({
 			type: 'LOGIN',
 			userName
+		}),
+
+	selectShowType: (show) =>
+		dispatch({
+			type: 'SELECT_SHOW_TYPE',
+			show
 		})
 })
 
