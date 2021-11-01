@@ -8,6 +8,7 @@ function DetailsLink(props) {
 		e && e.preventDefault()
 
 		if (props.showsIds.has(id)) {
+			props.updateLastId(id)
 			history.push(`/TV_Shows/${id}`)
 		}
 		else {
@@ -55,6 +56,12 @@ const mapDispatchToProps = (dispatch) => ({
 		dispatch({
 			type: 'ADD_SHOW_DETAILS',
 			details,
+			id
+		}),
+
+	updateLastId: (id) =>
+		dispatch({
+			type: 'UPDATE_LAST_SHOW_ID',
 			id
 		})
 })

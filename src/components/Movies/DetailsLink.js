@@ -8,6 +8,7 @@ function DetailsLink(props) {
 		e && e.preventDefault()
 
 		if (props.moviesIds.has(id)) {
+			props.updateLastId(id)
 			history.push(`/movies/${id}`)
 		}
 		else {
@@ -43,7 +44,8 @@ function DetailsLink(props) {
 
 const mapStateToProps = (state) => {
 	return {
-		moviesIds: state.detailedMoviesIds
+		moviesIds: state.detailedMoviesIds,
+		lastId: state.lastMovieId
 	}
 }
 
@@ -52,6 +54,12 @@ const mapDispatchToProps = (dispatch) => ({
 		dispatch({
 			type: 'ADD_MOVIE_DETAILS',
 			details,
+			id
+		}),
+
+	updateLastId: (id) =>
+		dispatch({
+			type: 'UPDATE_LAST_MOVIE_ID',
 			id
 		})
 })
